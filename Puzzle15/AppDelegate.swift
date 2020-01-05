@@ -19,13 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var session = WCSession.default
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.rootViewController = self.window?.rootViewController as? UINavigationController
         self.gameViewController = self.rootViewController!.topViewController as? GameViewController
         
         self.window?.tintColor = UIColor(red: 61.0/255.0, green: 169.0/255.0, blue: 237.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().barTintColor = UIColor.black
-        self.rootViewController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.rootViewController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.rootViewController?.navigationBar.setBackgroundImage(imageWithColor(UIColor.black, size: CGSize(width: 1, height: 1)), for: .default)
         self.rootViewController?.navigationBar.shadowImage = imageWithColor(UIColor.white, size: CGSize(width: 1, height: 1))
                 

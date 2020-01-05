@@ -45,7 +45,7 @@ class GameViewController: UITableViewController {
         self.navigationItem.rightBarButtonItems = [self.infoButton!] // , self.testButton!
         
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(GameViewController.refresh), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(GameViewController.refresh), for: UIControl.Event.valueChanged)
         self.refreshControl = refreshControl
         self.refreshControl?.tintColor = UIColor.white
         
@@ -470,7 +470,7 @@ class GameViewController: UITableViewController {
         return true
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
 
@@ -478,7 +478,7 @@ class GameViewController: UITableViewController {
             var gamesByDay = _gamesByDay[dayDate]!
             let game = gamesByDay[(indexPath as NSIndexPath).row]
             
-            let index = games.index(of: game)!
+            let index = games.firstIndex(of: game)!
             games.remove(at: index)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
