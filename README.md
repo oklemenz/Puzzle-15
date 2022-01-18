@@ -4,4 +4,4 @@ Puzzle of 15 is the famous sliding puzzle game playable on the Apple Watch. The 
 
 # Download
 
-- iOS: https://apps.apple.com/us/app/puzzle-of-15/id972679492?mt=8
+- App Store: https://apps.apple.com/us/app/puzzle-of-15/id972679492?mt=8
